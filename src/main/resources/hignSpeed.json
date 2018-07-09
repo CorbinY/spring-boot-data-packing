@@ -1,0 +1,49 @@
+{
+  "resultData": {
+    "carList": [
+      {
+        "eid": 157,
+        "pid": 116,
+        "ct": 1,
+        "pt": 0,
+        "pc": 1,
+        "vc": 1,
+        "num": "冀FPX566",
+        "lNum": 1,
+        "img": "camera/201801/1815/157/76fe8089-1cdf-4c8d-a499-54727f9558c4.jpg",
+        "speed": 171,
+        "stime": 1530256996223,
+        "addTime": "2018-06-29 15:23:16.223",
+        "ctStr": "未识别",
+        "ptStr": "未知",
+        "pcStr": "蓝色",
+        "vcStr": "白色",
+        "eNumber": "采集区-进京1Km1",
+        "distance": "1"
+      },
+      {
+        "eid": 155,
+        "pid": 112,
+        "ct": 1,
+        "pt": 0,
+        "pc": 1,
+        "vc": 1,
+        "num": "冀FPX566",
+        "lNum": 2,
+        "img": "camera/201801/1815/155/cff87622-36ad-45f6-87f5-ae2b55ad45ea.jpg",
+        "speed": 151,
+        "stime": 1530256902798,
+        "addTime": "2018-06-29 15:21:42.798",
+        "ctStr": "未识别",
+        "ptStr": "未知",
+        "pcStr": "蓝色",
+        "vcStr": "白色",
+        "eNumber": "采集区-进京5Km1",
+        "distance": "5"
+      }
+    ],
+    "section": "13523",
+    "second": 93.425
+  },
+  "status": 1
+}
