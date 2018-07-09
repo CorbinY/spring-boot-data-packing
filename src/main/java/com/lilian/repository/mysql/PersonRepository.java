@@ -22,4 +22,5 @@ public interface PersonRepository extends BaseRepository<Person, Long> {
      */
     @Query("select p from Person p where p.id = ?1")
     List<Person> findById(@Param("id") long id);
+
 }
