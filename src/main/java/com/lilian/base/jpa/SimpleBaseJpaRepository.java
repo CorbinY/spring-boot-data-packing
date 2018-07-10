@@ -1,4 +1,4 @@
-package com.lilian.base;
+package com.lilian.base.jpa;
 
 import org.springframework.data.jpa.repository.support.SimpleJpaRepository;
 
@@ -13,15 +13,14 @@ import java.util.List;
  * @Author 孙龙
  * @Date 2018/7/2
  */
-public class SimpleBaseRepository<T, ID extends Serializable>
-        extends SimpleJpaRepository<T, ID> implements BaseRepository<T, ID> {
+public class SimpleBaseJpaRepository<T, ID extends Serializable>
+        extends SimpleJpaRepository<T, ID> implements BaseJpaRepository<T, ID> {
 
-//    @PersistenceContext
     private final EntityManager entityManager;
 
     private Class<T> clazz;
 
-    public SimpleBaseRepository(Class<T> domainClass, EntityManager em) {
+    public SimpleBaseJpaRepository(Class<T> domainClass, EntityManager em) {
         super(domainClass, em);
         this.clazz = domainClass;
         this.entityManager = em;

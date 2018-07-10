@@ -1,4 +1,4 @@
-package com.lilian.base;
+package com.lilian.base.jpa;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.support.JpaRepositoryFactory;
@@ -12,14 +12,15 @@ import java.io.Serializable;
 
 /**
  * jpa-demo
+ * 自定义扩展后的factoryBean
  *
  * @Author 孙龙
  * @Date 2018/7/2
  */
-public class BaseRepositoryFactoryBean<R extends JpaRepository<T, I>, T, I extends Serializable>
+public class BaseJpaRepositoryFactoryBean<R extends JpaRepository<T, I>, T, I extends Serializable>
         extends JpaRepositoryFactoryBean<R, T, I> {
 
-    public BaseRepositoryFactoryBean(Class<? extends R> repositoryInterface) {
+    public BaseJpaRepositoryFactoryBean(Class<? extends R> repositoryInterface) {
         super(repositoryInterface);
     }
 
@@ -39,13 +40,13 @@ public class BaseRepositoryFactoryBean<R extends JpaRepository<T, I>, T, I exten
 
         @Override
         protected Object getTargetRepository(RepositoryInformation information) {
-            return new SimpleBaseRepository<T, I>((Class<T>) information.getDomainType(), entityManager);
+            return new SimpleBaseJpaRepository<T, I>((Class<T>) information.getDomainType(), entityManager);
         }
 
 
         @Override
         protected Class<?> getRepositoryBaseClass(RepositoryMetadata metadata) {
-            return SimpleBaseRepository.class;
+            return SimpleBaseJpaRepository.class;
         }
     }
 }

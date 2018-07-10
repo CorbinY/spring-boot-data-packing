@@ -1,9 +1,9 @@
 package com.lilian.repository.mongo;
 
+import com.lilian.base.mongo.BaseMongoRepository;
 import com.lilian.entity.mongo.Student;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.mongodb.repository.MongoRepository;
 
 import java.util.List;
 
@@ -13,7 +13,7 @@ import java.util.List;
  * @Author 孙龙
  * @Date 2018/7/9
  */
-public interface StudentRepository extends MongoRepository<Student, String> {
+public interface StudentRepository extends BaseMongoRepository<Student, String> {
     /**
      * 根据地址查询所有
      *

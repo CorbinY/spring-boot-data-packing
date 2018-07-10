@@ -1,4 +1,4 @@
-package com.lilian.base;
+package com.lilian.base.jpa;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
@@ -10,11 +10,12 @@ import java.util.List;
 /**
  * jpa-demo
  * 为全部的Repository 声明一些自定义方法的接口
+ *
  * @Author 孙龙
  * @Date 2018/7/2
  */
 @NoRepositoryBean
-public interface BaseRepository<T, ID extends Serializable> extends JpaRepository<T, ID>, JpaSpecificationExecutor<T> {
+public interface BaseJpaRepository<T, ID extends Serializable> extends JpaRepository<T, ID>, JpaSpecificationExecutor<T> {
     /**
      * 查询多个属性
      * 返回List<Object[]>数组形式的List，数组中内容按照查询字段先后

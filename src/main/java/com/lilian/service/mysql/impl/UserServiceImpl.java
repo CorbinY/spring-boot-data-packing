@@ -1,7 +1,7 @@
 package com.lilian.service.mysql.impl;
 
 import com.lilian.entity.mysql.User;
-import com.lilian.repository.mysql.UserRepository;
+import com.lilian.repository.mysql.UserJpaRepository;
 import com.lilian.service.mysql.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -23,7 +23,7 @@ public class UserServiceImpl implements IUserService {
 
 
     @Autowired
-    private UserRepository userRepository;
+    private UserJpaRepository userRepository;
 
     @Override
     public List<User> queryAllBetweenAddtime(String startTime, String endTime) throws Exception {

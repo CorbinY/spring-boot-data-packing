@@ -1,14 +1,20 @@
 package com.lilian.service.mongo.impl;
 
 import com.lilian.entity.mongo.Student;
+import com.lilian.entity.mysql.Person;
 import com.lilian.service.mongo.IStudentService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.domain.Page;
+import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.RowMapper;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -22,6 +28,9 @@ import java.util.List;
 @SpringBootTest
 @RunWith(SpringRunner.class)
 public class StudentServiceImplTest {
+
+    @Autowired
+    private JdbcTemplate jdbcTemplate;
 
     @Autowired
     private IStudentService studentService;
@@ -90,10 +99,29 @@ public class StudentServiceImplTest {
 
     @Test
     public void queryByVo() {
-        Student student = new Student(null, null, 25, "杭州", null, null, null);
-        List<Student> studentList = studentService.queryByVo(student);
-        for (Student student1 : studentList) {
-            System.out.println(student1);
-        }
+//        Student student = new Student(null, null, 25, "杭州", null, null, null);
+//        List<Student> studentList = studentService.queryByVo(student);
+//        for (Student student1 : studentList) {
+//            System.out.println(student1);
+//        }
+
+        String sql = "select id, add_time, addr, age, email, name, phone_num from person";
+        Person person = jdbcTemplate.queryForObject(sql, (arg0, arg1) -> {
+            Person person1 = new Person();
+            person1.setId(arg0.getLong("id"));
+            person1.setAddr(arg0.getString("addr"));
+            person1.setEmail(arg0.getString("email"));
+            person1.setName(arg0.getString("name"));
+            person1.setPhoneNum(arg0.getString("phone_num"));
+            person1.setAge(arg0.getInt("age"));
+            return person1;
+        });
+//        for (Person person : personList) {
+            System.out.println(person);
+//        }
+//        List<Student> studentList1 = mongoTemplate.findAll(Student.class);
+//        for (Student student1 : studentList1) {
+//            System.out.println(student1);
+//        }
     }
 }

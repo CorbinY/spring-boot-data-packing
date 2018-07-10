@@ -1,7 +1,7 @@
 package com.lilian.service.mysql.impl;
 
 import com.lilian.entity.mysql.Person;
-import com.lilian.repository.mysql.PersonRepository;
+import com.lilian.repository.mysql.PersonJpaRepository;
 import com.lilian.service.mysql.IPersonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.domain.Specification;
@@ -19,7 +19,7 @@ import java.util.List;
 public class PersonServiceImpl implements IPersonService {
 
     @Autowired
-    private PersonRepository personRepository;
+    private PersonJpaRepository personRepository;
 
     @Override
     public List<Person> queryById(Long id) {
@@ -28,16 +28,12 @@ public class PersonServiceImpl implements IPersonService {
 
     @Override
     public List<Person> queryByAddr(String addr) {
-        Specification<Person> specification = ((root, query, cb) -> cb.equal(root.get("addr"), addr));
-
-        return personRepository.findAll(specification);
+        return personRepository.findAll((root, query, cb) -> cb.equal(root.get("addr"), addr));
     }
 
     @Override
     public List<Person> queryByPhoneNum(String phoneNum) {
-        Specification<Person> specification = ((root, query, cb) -> cb.equal(root.get("phoneNum"), phoneNum));
-
-        return personRepository.findAll(specification);
+        return personRepository.findAll((root, query, cb) -> cb.equal(root.get("phoneNum"), phoneNum));
     }
 
 

@@ -1,6 +1,6 @@
 package com.lilian.repository.mysql;
 
-import com.lilian.base.BaseRepository;
+import com.lilian.base.jpa.BaseJpaRepository;
 import com.lilian.entity.mysql.Person;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -13,7 +13,7 @@ import java.util.List;
  * @Author 孙龙
  * @Date 2018/7/3
  */
-public interface PersonRepository extends BaseRepository<Person, Long> {
+public interface PersonJpaRepository extends BaseJpaRepository<Person, Long> {
     /**
      * 根据ID查询全部
      *
