@@ -48,6 +48,7 @@ public interface StudentRepository extends BaseMongoRepository<Student, String> 
      * @param maxAge
      * @return
      */
+//    @Query("")
     List<Student> findAllByAgeLessThan(int maxAge);
 
 }
