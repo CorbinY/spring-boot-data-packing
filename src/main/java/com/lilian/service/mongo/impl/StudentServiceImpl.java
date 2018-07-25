@@ -23,7 +23,6 @@ public class StudentServiceImpl implements IStudentService {
     @Autowired
     private StudentRepository studentRepository;
 
-
     @Override
     public List<Student> queryAll() {
 

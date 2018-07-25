@@ -33,7 +33,6 @@ public interface StudentRepository extends BaseMongoRepository<Student, String> 
     /**
      * 根据实体类中的属性进行模糊查询带分页
      * 带分页的模糊查询，其实是把模糊查询以及分页进行合并，
-     * 同时我们也需要在PersonRepository仓库中定义方法，
      * 定义方法名的规则和模糊查询的规则一致，只是参数不同而已。
      *
      * @param name

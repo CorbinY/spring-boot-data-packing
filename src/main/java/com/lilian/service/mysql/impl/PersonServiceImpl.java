@@ -4,7 +4,6 @@ import com.lilian.entity.mysql.Person;
 import com.lilian.repository.mysql.PersonJpaRepository;
 import com.lilian.service.mysql.IPersonService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

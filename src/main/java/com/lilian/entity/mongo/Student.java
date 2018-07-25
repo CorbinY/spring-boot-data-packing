@@ -4,8 +4,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-
-import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.util.Date;
 
@@ -22,17 +20,29 @@ public class Student {
 
     @Id
     private String id;
-
+    /**
+     * 姓名
+     */
     private String name;
-
+    /**
+     * 年龄
+     */
     private Integer age;
-
+    /**
+     * 地址
+     */
     private String addr;
-
+    /**
+     * 邮箱
+     */
     private String email;
-
+    /**
+     * 添加时间
+     */
     private Date addTime;
-
+    /**
+     * 手机号
+     */
     private String phoneNum;
 
 }

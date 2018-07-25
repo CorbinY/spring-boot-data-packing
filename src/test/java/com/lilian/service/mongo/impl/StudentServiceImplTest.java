@@ -1,20 +1,14 @@
 package com.lilian.service.mongo.impl;
 
 import com.lilian.entity.mongo.Student;
-import com.lilian.entity.mysql.Person;
 import com.lilian.service.mongo.IStudentService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.domain.Page;
-import org.springframework.data.mongodb.core.MongoTemplate;
-import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.core.RowMapper;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -101,24 +95,5 @@ public class StudentServiceImplTest {
         for (Student student1 : studentList) {
             System.out.println(student1);
         }
-
-//        String sql = "select id, add_time, address, age, email, name, phone_num from person";
-//        Person person = jdbcTemplate.queryForObject(sql, (arg0, arg1) -> {
-//            Person person1 = new Person();
-//            person1.setId(arg0.getLong("id"));
-//            person1.setAddress(arg0.getString("address"));
-//            person1.setEmail(arg0.getString("email"));
-//            person1.setName(arg0.getString("name"));
-//            person1.setPhoneNum(arg0.getString("phone_num"));
-//            person1.setAge(arg0.getInt("age"));
-//            return person1;
-//        });
-//        for (Person person : personList) {
-//            System.out.println(person);
-//        }
-//        List<Student> studentList1 = mongoTemplate.findAll(Student.class);
-//        for (Student student1 : studentList1) {
-//            System.out.println(student1);
-//        }
     }
 }
