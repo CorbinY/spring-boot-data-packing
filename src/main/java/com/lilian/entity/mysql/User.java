@@ -8,7 +8,7 @@ import java.io.Serializable;
 import java.sql.Timestamp;
 
 /**
- * jpa-demo
+ * jpa-demo 双主键
  *
  * @Author 孙龙
  * @Date 2018/7/2

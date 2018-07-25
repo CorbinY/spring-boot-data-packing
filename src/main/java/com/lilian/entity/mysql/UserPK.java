@@ -9,7 +9,7 @@ import javax.persistence.Embeddable;
 import java.io.Serializable;
 
 /**
- * jpa-demo
+ * jpa-demo User表双主键
  *
  * @Author 孙龙
  * @Date 2018/7/3
