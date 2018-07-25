@@ -8,7 +8,7 @@ import java.io.Serializable;
 import java.util.List;
 
 /**
- * jpa-demo
+ * jpa-demo 公共Jpa接口实现类
  *
  * @Author 孙龙
  * @Date 2018/7/2
@@ -44,9 +44,9 @@ public class SimpleBaseJpaRepository<T, ID extends Serializable>
 
     @Override
     public List sqlSingleList(String sql) {
-        Query query=entityManager.createNativeQuery(sql);
+        Query query = entityManager.createNativeQuery(sql);
         List list = query.getResultList();
         entityManager.close();
-        return  list;
+        return list;
     }
 }

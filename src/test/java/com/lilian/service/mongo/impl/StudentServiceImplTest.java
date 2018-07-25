@@ -102,11 +102,11 @@ public class StudentServiceImplTest {
             System.out.println(student1);
         }
 
-//        String sql = "select id, add_time, addr, age, email, name, phone_num from person";
+//        String sql = "select id, add_time, address, age, email, name, phone_num from person";
 //        Person person = jdbcTemplate.queryForObject(sql, (arg0, arg1) -> {
 //            Person person1 = new Person();
 //            person1.setId(arg0.getLong("id"));
-//            person1.setAddr(arg0.getString("addr"));
+//            person1.setAddress(arg0.getString("address"));
 //            person1.setEmail(arg0.getString("email"));
 //            person1.setName(arg0.getString("name"));
 //            person1.setPhoneNum(arg0.getString("phone_num"));

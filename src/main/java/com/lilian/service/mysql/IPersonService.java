@@ -12,6 +12,13 @@ import java.util.List;
  */
 public interface IPersonService {
     /**
+     * 批量添加
+     *
+     * @param personList
+     */
+    void batchAdd(List<Person> personList);
+
+    /**
      * 根据ID查询（@Query方式）
      *
      * @param id

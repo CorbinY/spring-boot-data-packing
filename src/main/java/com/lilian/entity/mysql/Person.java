@@ -1,6 +1,7 @@
 package com.lilian.entity.mysql;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
@@ -13,22 +14,42 @@ import java.sql.Timestamp;
  */
 @Data
 @Entity
+@NoArgsConstructor
 public class Person {
     @Id
     @GeneratedValue
     private Long id;
-
-    @Column
+    /**
+     * 姓名
+     */
     private String name;
-    @Column
+    /**
+     * 年龄
+     */
     private Integer age;
-    @Column
-    private String addr;
-    @Column
+    /**
+     * 地址
+     */
+    private String address;
+    /**
+     * 邮箱
+     */
     private String email;
-    @Column
+    /**
+     * 添加时间
+     */
     private Timestamp addTime;
-    @Column
+    /**
+     * 手机号码
+     */
     private String phoneNum;
 
+    public Person(String name, Integer age, String address, String email, Timestamp addTime, String phoneNum) {
+        this.name = name;
+        this.age = age;
+        this.address = address;
+        this.email = email;
+        this.addTime = addTime;
+        this.phoneNum = phoneNum;
+    }
 }

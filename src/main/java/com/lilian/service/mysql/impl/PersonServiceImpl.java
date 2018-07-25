@@ -22,13 +22,18 @@ public class PersonServiceImpl implements IPersonService {
     private PersonJpaRepository personRepository;
 
     @Override
+    public void batchAdd(List<Person> personList) {
+        personRepository.save(personList);
+    }
+
+    @Override
     public List<Person> queryById(Long id) {
         return personRepository.findById(id);
     }
 
     @Override
     public List<Person> queryByAddr(String addr) {
-        return personRepository.findAll((root, query, cb) -> cb.equal(root.get("addr"), addr));
+        return personRepository.findAll((root, query, cb) -> cb.equal(root.get("address"), addr));
     }
 
     @Override
