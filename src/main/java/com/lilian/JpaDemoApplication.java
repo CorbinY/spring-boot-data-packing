@@ -11,7 +11,7 @@ import org.springframework.data.mongodb.repository.config.EnableMongoRepositorie
 
 @SpringBootApplication
 @EnableJpaRepositories(basePackages = {"com.lilian.repository.mysql"}, repositoryFactoryBeanClass = BaseJpaRepositoryFactoryBean.class)
-@EnableMongoRepositories(repositoryBaseClass = SimpleBaseMongoRepository.class, basePackages = {"com.lilian.repository.mongo"}, repositoryFactoryBeanClass = BaseMongoRepositoryFactoryBean.class)
+@EnableMongoRepositories(basePackages = {"com.lilian.repository.mongo"}, repositoryFactoryBeanClass = BaseMongoRepositoryFactoryBean.class)
 public class JpaDemoApplication {
 
     public static void main(String[] args) {
