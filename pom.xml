@@ -4,12 +4,12 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.lilian</groupId>
-	<artifactId>jpa-demo</artifactId>
+	<artifactId>spring-boot-data-packing</artifactId>
 	<version>1.0.0</version>
 	<packaging>jar</packaging>
 
-	<name>jpa-demo</name>
-	<description>Demo project for Spring Boot</description>
+	<name>spring-boot-data-packing</name>
+	<description>Spring-Data-Jpa、spring-data-mongoDB和Spring-data-redis封装自定义公共接口在Spring-boot中的应用。</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>

@@ -7,9 +7,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @Author 孙龙
  */
 @SpringBootApplication
-public class JpaDemoApplication {
+public class SpringBootDataPackingApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(JpaDemoApplication.class, args);
+        SpringApplication.run(SpringBootDataPackingApplication.class, args);
     }
 }
