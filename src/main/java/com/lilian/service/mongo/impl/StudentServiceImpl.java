@@ -1,7 +1,7 @@
 package com.lilian.service.mongo.impl;
 
 import com.lilian.entity.mongo.Student;
-import com.lilian.repository.mongo.StudentRepository;
+import com.lilian.repo.mongo.StudentRepository;
 import com.lilian.service.mongo.IStudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;

@@ -1,4 +1,4 @@
-package com.lilian.repository.mongo;
+package com.lilian.repo.mongo;
 
 import com.lilian.base.mongo.BaseMongoRepository;
 import com.lilian.entity.mongo.Student;

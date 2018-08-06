@@ -1,7 +1,7 @@
 package com.lilian.service.mysql.impl;
 
 import com.lilian.entity.mysql.Person;
-import com.lilian.repository.mysql.PersonJpaRepository;
+import com.lilian.repo.mysql.PersonRepository;
 import com.lilian.service.mysql.IPersonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,7 +18,7 @@ import java.util.List;
 public class PersonServiceImpl implements IPersonService {
 
     @Autowired
-    private PersonJpaRepository personRepository;
+    private PersonRepository personRepository;
 
     @Override
     public void batchAdd(List<Person> personList) {

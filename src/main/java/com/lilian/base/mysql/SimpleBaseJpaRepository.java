@@ -1,4 +1,4 @@
-package com.lilian.base.jpa;
+package com.lilian.base.mysql;
 
 import org.springframework.data.jpa.repository.support.SimpleJpaRepository;
 

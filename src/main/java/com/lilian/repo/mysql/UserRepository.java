@@ -1,6 +1,6 @@
-package com.lilian.repository.mysql;
+package com.lilian.repo.mysql;
 
-import com.lilian.base.jpa.BaseJpaRepository;
+import com.lilian.base.mysql.BaseJpaRepository;
 import com.lilian.entity.mysql.User;
 import org.springframework.data.jpa.repository.Query;
 
@@ -13,7 +13,7 @@ import java.util.List;
  * @Author 孙龙
  * @Date 2018/7/2
  */
-public interface UserJpaRepository extends BaseJpaRepository<User, Long> {
+public interface UserRepository extends BaseJpaRepository<User, Long> {
     /**
      * 根据时间范围查询全部
      *
