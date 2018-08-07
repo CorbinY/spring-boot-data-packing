@@ -13,6 +13,7 @@ import java.util.List;
 public interface IUserService {
     /**
      * 根据时间范围查询（Jpa提供的方法名拼接方式）
+     *
      * @param startTime
      * @param endTime
      * @return
@@ -22,22 +23,33 @@ public interface IUserService {
 
     /**
      * 批量插入（Jpa封装方式）
+     *
      * @param userList
      */
     void batchAdd(List<User> userList);
 
     /**
      * 查询全部（自定义原生SQL方式）
+     *
      * @return
      */
     List<Object[]> queryAllCustom();
 
     /**
      * 按照时间范围统计（@Query方式查询）
+     *
      * @param startTime
      * @param endTime
      * @return
      * @throws Exception
      */
     List countAgeByPasswordBetweenTime(String startTime, String endTime) throws Exception;
+
+    /**
+     * 根据ID查询
+     *
+     * @param id
+     * @return
+     */
+    User queryById(Long id);
 }

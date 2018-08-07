@@ -18,10 +18,10 @@ import java.io.Serializable;
 @NoArgsConstructor
 @Data
 @Embeddable
-public class UserPK implements Serializable {
+public class CustomerPK implements Serializable {
     @Column(nullable = false)
     private Long id;
     @Column(nullable = false)
-    private String username;
+    private String name;
 
 }

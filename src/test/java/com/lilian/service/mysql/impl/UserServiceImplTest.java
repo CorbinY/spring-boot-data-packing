@@ -1,5 +1,6 @@
 package com.lilian.service.mysql.impl;
 
+import com.lilian.entity.mysql.Role;
 import com.lilian.entity.mysql.User;
 import com.lilian.service.mysql.IUserService;
 import org.junit.Test;
@@ -70,6 +71,15 @@ public class UserServiceImplTest {
                 System.out.println(o);
             }
 
+        }
+    }
+    @Test
+    public void queryById(){
+        User user = userService.queryById(1L);
+        System.out.println(user.toString());
+        List<Role> roleList = user.getRoleList();
+        for (Role role : roleList) {
+            System.out.println(role.toString());
         }
     }
 }

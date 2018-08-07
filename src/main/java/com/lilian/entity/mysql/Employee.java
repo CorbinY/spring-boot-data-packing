@@ -15,7 +15,7 @@ import java.sql.Timestamp;
 @Data
 @Entity
 @NoArgsConstructor
-public class Person {
+public class Employee {
     @Id
     @GeneratedValue
     private Long id;
@@ -43,13 +43,18 @@ public class Person {
      * 手机号码
      */
     private String phoneNum;
+    /**
+     * 所属部门
+     */
+    private Long departmentId;
 
-    public Person(String name, Integer age, String address, String email, Timestamp addTime, String phoneNum) {
+    public Employee(String name, Integer age, String address, String email, Timestamp addTime, String phoneNum, Long departmentId) {
         this.name = name;
         this.age = age;
         this.address = address;
         this.email = email;
         this.addTime = addTime;
         this.phoneNum = phoneNum;
+        this.departmentId = departmentId;
     }
 }

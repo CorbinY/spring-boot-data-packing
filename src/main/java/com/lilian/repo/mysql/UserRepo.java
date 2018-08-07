@@ -13,7 +13,7 @@ import java.util.List;
  * @Author 孙龙
  * @Date 2018/7/2
  */
-public interface UserRepository extends BaseJpaRepository<User, Long> {
+public interface UserRepo extends BaseJpaRepository<User, Long> {
     /**
      * 根据时间范围查询全部
      *

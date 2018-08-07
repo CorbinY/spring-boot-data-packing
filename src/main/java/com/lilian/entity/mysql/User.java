@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.sql.Timestamp;
+import java.util.List;
 
 /**
  * jpa-demo 双主键
@@ -18,19 +19,40 @@ import java.sql.Timestamp;
 @Entity
 public class User implements Serializable {
 
-    @EmbeddedId
-    private UserPK id;
+    @Id
+    @GeneratedValue
+    private Long id;
+    /**
+     * 用户名
+     */
+    private String username;
 
-    @Column(nullable = false)
+    /**
+     * 添加时间
+     */
     private Timestamp addTime;
 
-    @Column(nullable = false)
+    /**
+     * 密码
+     */
     private String password;
-
+    /**
+     * 年龄
+     */
     private Integer age;
+    /**
+     * 指定中间表
+     * 和关系的id
+     * 还有逆向的id
+     */
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "UserRoleRelation", joinColumns = @JoinColumn(name = "userId", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name = "roleId", referencedColumnName = "id"))
+    private List<Role> roleList;
 
     public User(Long id, String username, Timestamp addTime, String password, Integer age) {
-        this.id = new UserPK(id, username);
+        this.id = id;
+        this.username = username;
         this.addTime = addTime;
         this.password = password;
         this.age = age;

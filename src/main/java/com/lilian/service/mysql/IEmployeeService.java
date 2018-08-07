@@ -1,6 +1,6 @@
 package com.lilian.service.mysql;
 
-import com.lilian.entity.mysql.Person;
+import com.lilian.entity.mysql.Employee;
 
 import java.util.List;
 
@@ -10,13 +10,13 @@ import java.util.List;
  * @Author 孙龙
  * @Date 2018/7/3
  */
-public interface IPersonService {
+public interface IEmployeeService {
     /**
      * 批量添加
      *
-     * @param personList
+     * @param employeeList
      */
-    void batchAdd(List<Person> personList);
+    void batchAdd(List<Employee> employeeList);
 
     /**
      * 根据ID查询（@Query方式）
@@ -24,7 +24,7 @@ public interface IPersonService {
      * @param id
      * @return
      */
-    List<Person> queryById(Long id);
+    List<Employee> queryById(Long id);
 
     /**
      * 根据Addr查询（Specification方式）
@@ -32,7 +32,7 @@ public interface IPersonService {
      * @param addr
      * @return
      */
-    List<Person> queryByAddr(String addr);
+    List<Employee> queryByAddr(String addr);
 
     /**
      * 根据 phoneNum 查询（Specification方式）
@@ -40,7 +40,7 @@ public interface IPersonService {
      * @param phoneNum
      * @return
      */
-    List<Person> queryByPhoneNum(String phoneNum);
+    List<Employee> queryByPhoneNum(String phoneNum);
 
 
 }
