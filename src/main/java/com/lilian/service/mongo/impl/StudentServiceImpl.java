@@ -46,6 +46,7 @@ public class StudentServiceImpl implements IStudentService {
 
     @Override
     public Page<Student> queryByNameAndPage(int page, int rows, String name) {
+//        Sort sort = new Sort(Sort.DESc, )
         PageRequest pageRequest = new PageRequest(page, rows);
         return studentRepository.findByNameLike(name, pageRequest);
     }
