@@ -12,4 +12,5 @@ public class SpringBootDataPackingApplication {
     public static void main(String[] args) {
         SpringApplication.run(SpringBootDataPackingApplication.class, args);
     }
+
 }

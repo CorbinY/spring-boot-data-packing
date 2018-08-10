@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import javax.transaction.Transactional;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
@@ -37,12 +38,12 @@ public class UserServiceImplTest {
     @Test
     public void batchAdd() {
         List<User> userList = new ArrayList<User>() {{
-            add(new User(1L, "admin", new Timestamp(System.currentTimeMillis() - 10000L), "admin", 20));
-            add(new User(2L, "weiqi", new Timestamp(System.currentTimeMillis() - 20000L), "123", 26));
-            add(new User(3L, "yuyang", new Timestamp(System.currentTimeMillis() - 30000L), "456", 28));
-            add(new User(4L, "skylon", new Timestamp(System.currentTimeMillis() - 40000L), "789", 23));
-            add(new User(5L, "hualong", new Timestamp(System.currentTimeMillis() - 50000L), "159", 21));
-            add(new User(6L, "duanfei", new Timestamp(System.currentTimeMillis()), "147", 18));
+            add(new User("admin", new Timestamp(System.currentTimeMillis() - 10000L), "admin", 20));
+            add(new User("weiqi", new Timestamp(System.currentTimeMillis() - 20000L), "123", 26));
+            add(new User("yuyang", new Timestamp(System.currentTimeMillis() - 30000L), "456", 28));
+            add(new User("skylon", new Timestamp(System.currentTimeMillis() - 40000L), "789", 23));
+            add(new User("hualong", new Timestamp(System.currentTimeMillis() - 50000L), "159", 21));
+            add(new User("duanfei", new Timestamp(System.currentTimeMillis()), "147", 18));
         }};
         userService.batchAdd(userList);
     }
@@ -73,10 +74,11 @@ public class UserServiceImplTest {
 
         }
     }
+
     @Test
+    @Transactional
     public void queryById(){
         User user = userService.queryById(1L);
-        System.out.println(user.toString());
         List<Role> roleList = user.getRoleList();
         for (Role role : roleList) {
             System.out.println(role.toString());

@@ -45,13 +45,12 @@ public class User implements Serializable {
      * 和关系的id
      * 还有逆向的id
      */
-    @ManyToMany(fetch = FetchType.EAGER)
+    @ManyToMany
     @JoinTable(name = "UserRoleRelation", joinColumns = @JoinColumn(name = "userId", referencedColumnName = "id"),
             inverseJoinColumns = @JoinColumn(name = "roleId", referencedColumnName = "id"))
     private List<Role> roleList;
 
-    public User(Long id, String username, Timestamp addTime, String password, Integer age) {
-        this.id = id;
+    public User(String username, Timestamp addTime, String password, Integer age) {
         this.username = username;
         this.addTime = addTime;
         this.password = password;

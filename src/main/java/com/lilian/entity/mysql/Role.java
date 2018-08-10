@@ -3,9 +3,10 @@ package com.lilian.entity.mysql;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import java.io.Serializable;
-import java.util.List;
 
 /**
  * spring-boot-data-packing
@@ -24,9 +25,6 @@ public class Role implements Serializable {
     private String name;
 
     private String code;
-
-    @ManyToMany(fetch = FetchType.EAGER)
-    private List<User> userList;
 
     public Role(String name, String code) {
         this.name = name;
