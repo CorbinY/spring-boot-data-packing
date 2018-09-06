@@ -7,7 +7,9 @@ package com.lilian.base.redis;
  * @Author 孙龙
  * @Date 2018/8/2
  */
-public interface BaseRedisRepository extends RedisHashRepository, RedisSetRepository, RedisListRepository, RedisStringRepository, RedisObjectRepository {
+public interface BaseRedisRepository extends RedisHashRepository, RedisSetRepository,
+        RedisListRepository, RedisStringRepository,
+        RedisObjectRepository, RedisZsetRepository {
 
     /**
      * 根据键Key删除(hash/set/list/String)

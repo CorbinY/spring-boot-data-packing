@@ -10,7 +10,7 @@ import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 /**
- * llld-parent
+ * llld-parent 封装redis公共接口的实现类
  *
  * @Author 孙龙
  * @Date 2018/8/2
@@ -202,5 +202,10 @@ public class SimpleBaseRedisRepository implements BaseRedisRepository {
     @Override
     public void publish(String topic, String value) {
         redisTemplate.convertAndSend(topic, value);
+    }
+
+    @Override
+    public Boolean zsetAdd(String key, String value, double score) {
+        return redisTemplate.opsForZSet().add(key, value, score);
     }
 }
